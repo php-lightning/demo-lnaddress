@@ -1,34 +1,33 @@
 #  Demo lightning-address
 
-### Setup
 
-1) Install the dependencies:
+Use the `lnaddress` to be able to *get a callback url* and *request an invoice from your server*.
+
+This demo shows that the entire library works by using the library code + with custom configuration in your own `lightning-config.php`.
+
+## Setup
+
+#### From scratch
+
 ```bash
-# From scratch:
 composer init
 composer require php-lightning/lightning-address
+```
 
-# Or, in case you are using this template, simply install:
+#### Using this template
+
+```bash
+https://github.com/php-lightning/demo-lnaddress/generate
 composer install
 ```
 
-Then you can *get a callback url* and *request an invoice from your server*.
-
-2) Get a callback url
-```bash
-vendor/bin/lnaddress callback-url
-```
-
-3) Request an invoice from your server (in millisats)
-```bash
-php index.php 1000000
-```
-
-### Configuration
+## Configuration
 
 The configuration is set up in `lightning-config.php` at the root of the project.
 
 ```yaml
+# This is in YAML just for readability. 
+# The configuration is in PHP using the `LightningConfig` object.
 LightningConfig:
 - Mode: 'test|prod'
 - Domain: 'https://domain.com'
@@ -39,4 +38,28 @@ LightningConfig:
     - LnBitsBackendConfig:
         - ApiEndpoint: 'http://localhost:5000'
         - ApiKey: 'XYZ'
+```
+
+## What can you do?
+
+#### Get a callback url
+
+```bash
+vendor/bin/lnaddress callback-url
+```
+
+#### Request an invoice from your server (in millisats)
+
+This is the FE part which could be listening in your own server
+
+```bash
+php -S localhost:8080 vendor/php-lightning/lightning-address/index.php
+
+# And then request using amount as GET param:
+http://localhost:8080/?amount=100000  
+```
+
+Or as command:
+```php
+php vendor/php-lightning/lightning-address/index.php 100000
 ```
