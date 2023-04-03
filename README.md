@@ -47,6 +47,7 @@ LightningConfig:
 ```bash
 vendor/bin/lnaddress callback-url
 ```
+<img src="images/callback-url.jpg" alt="Get a callback url command example">
 
 #### Request an invoice from your server (in millisats)
 
@@ -58,8 +59,10 @@ php -S localhost:8080 vendor/php-lightning/lightning-address/index.php
 # And then request using amount as GET param:
 http://localhost:8080/?amount=100000  
 ```
+<img src="images/index-as-server.jpg" alt="Request an invoice from your server example">
 
 Or as command:
 ```php
 php vendor/php-lightning/lightning-address/index.php 100000
 ```
+<img src="images/index-as-command.jpg" alt="Request an invoice using index.php as command example">
