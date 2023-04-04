@@ -29,11 +29,9 @@ The configuration is set up in `lightning-config.php` at the root of the project
 # This is in YAML just for readability. 
 # The configuration is in PHP using the `LightningConfig` object.
 LightningConfig:
-- Mode: 'test|prod'
 - Domain: 'https://domain.com'
 - Receiver: 'receiver'
-- MinSendable: 10_000        # millisats
-- MaxSendable: 1_000_000_000 # millisats
+- SendableRange: 10_000, 1_000_000_000 # (min,max) millisats
 - Backends:
     - LnBitsBackendConfig:
         - ApiEndpoint: 'http://localhost:5000'
@@ -54,7 +52,7 @@ vendor/bin/lnaddress callback-url
 This is the FE part which could be listening in your own server
 
 ```bash
-php -S localhost:8080 vendor/php-lightning/lnaddress/index.php
+php -S localhost:8080 vendor/php-lightning/lnaddress/public/index.php
 
 # And then request using amount as GET param:
 http://localhost:8080/?amount=100000  
@@ -63,6 +61,6 @@ http://localhost:8080/?amount=100000
 
 Or as command:
 ```php
-php vendor/php-lightning/lnaddress/index.php 100000
+php vendor/php-lightning/lnaddress/public/index.php 100000
 ```
 <img src="images/index-as-command.jpg" alt="Request an invoice using index.php as command example">

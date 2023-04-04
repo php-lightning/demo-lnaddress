@@ -6,11 +6,9 @@ use PhpLightning\Config\Backend\LnBitsBackendConfig;
 use PhpLightning\Config\LightningConfig;
 
 return (new LightningConfig())
-    ->setMode('test')
     ->setDomain('domain.com')
     ->setReceiver('receiver')
-    ->setMinSendable(10_000)
-    ->setMaxSendable(1_000_000_000)
+    ->setSendableRange(100_000, 10_000_000_000)
     ->addBackend(
         (new LnBitsBackendConfig())
             ->setApiEndpoint('http://localhost:5000')  // lnbits endpoint : protocol://host:port
