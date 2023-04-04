@@ -11,7 +11,7 @@ This demo shows that the entire library works by using the library code + with c
 
 ```bash
 composer init
-composer require php-lightning/lightning-address
+composer require php-lightning/lnaddress
 ```
 
 #### Using this template
@@ -54,7 +54,7 @@ vendor/bin/lnaddress callback-url
 This is the FE part which could be listening in your own server
 
 ```bash
-php -S localhost:8080 vendor/php-lightning/lightning-address/index.php
+php -S localhost:8080 vendor/php-lightning/lnaddress/index.php
 
 # And then request using amount as GET param:
 http://localhost:8080/?amount=100000  
@@ -63,6 +63,6 @@ http://localhost:8080/?amount=100000
 
 Or as command:
 ```php
-php vendor/php-lightning/lightning-address/index.php 100000
+php vendor/php-lightning/lnaddress/index.php 100000
 ```
 <img src="images/index-as-command.jpg" alt="Request an invoice using index.php as command example">

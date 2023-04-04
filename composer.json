@@ -1,5 +1,5 @@
 {
     "require": {
-        "php-lightning/lightning-address": "dev-main"
+        "php-lightning/lnaddress": "dev-main"
     }
 }
