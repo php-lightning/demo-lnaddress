@@ -25,17 +25,17 @@ composer install
 
 The configuration is set up in `lightning-config.php` at the root of the project.
 
-```yaml
-# This is in YAML just for readability. 
-# The configuration is in PHP using the `LightningConfig` object.
-LightningConfig:
-- Domain: 'https://domain.com'
-- Receiver: 'receiver'
-- SendableRange: 10_000, 1_000_000_000 # (min,max) millisats
-- Backends:
-    - LnBitsBackendConfig:
-        - ApiEndpoint: 'http://localhost:5000'
-        - ApiKey: 'XYZ'
+```php
+<?php
+return (new LightningConfig())
+    ->setDomain('your-domain.com')
+    ->setReceiver('custom-receiver')
+    ->setSendableRange(min: 100_000, max: 10_000_000_000)
+    ->addBackend(
+        (new LnBitsBackendConfig())
+            ->setApiEndpoint('http://localhost:5000') // lnbits endpoint : protocol://host:port
+            ->setApiKey('3h9e75cf...9eca373'),        // put your lnbits read key here
+    );
 ```
 
 ## What can you do?
