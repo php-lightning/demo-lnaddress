@@ -44,6 +44,6 @@ http://localhost:8080/
 
 2) Request an invoice from your server (in milli-sats). Request using amount as GET param:
 ```http request
-http://localhost:8080/?amount=100000  
+http://localhost:8080/user_1?amount=100000  
 ```
 <img src="images/index.png" alt="Request an invoice from your server example">

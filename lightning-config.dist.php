@@ -6,12 +6,15 @@ use PhpLightning\Config\Backend\LnBitsBackendConfig;
 use PhpLightning\Config\LightningConfig;
 
 return (new LightningConfig())
-    ->setDomain('your-domain.com')
-    ->setReceiver('receiver')
-    ->setSendableRange(100_000, 10_000_000_000)
-    ->setCallbackUrl('https://your-domain.com/path/to/index.php')
-    ->addBackend(
-        (new LnBitsBackendConfig())
+    ->setDomain('localhost')
+    ->setReceiver('default-receiver')
+    ->setSendableRange(min: 100_000, max: 10_000_000_000)
+    ->setCallbackUrl('localhost:8000/callback')
+    ->setBackends([
+        'user_1' => (new LnBitsBackendConfig())
             ->setApiEndpoint('http://localhost:5000')
-            ->setApiKey('api_key')
-    );
+            ->setApiKey('api_key_1'),
+        'user_2' => (new LnBitsBackendConfig())
+            ->setApiEndpoint('http://localhost:5000')
+            ->setApiKey('api_key_2')
+    ]);
