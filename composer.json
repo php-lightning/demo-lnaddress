@@ -1,6 +1,6 @@
 {
     "require": {
-        "php-lightning/lnaddress": "dev-install-symfony"
+        "php-lightning/lnaddress": "dev-main"
     },
     "config": {
         "allow-plugins": {
