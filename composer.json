@@ -2,6 +2,7 @@
     "require": {
         "php-lightning/lnaddress": "dev-main"
     },
+    "minimum-stability": "dev",
     "config": {
         "allow-plugins": {
             "symfony/runtime": true
