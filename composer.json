@@ -2,5 +2,8 @@
     "require": {
         "php-lightning/lnaddress": "dev-main"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "scripts": {
+        "serve": "php -S localhost:8083 vendor/php-lightning/lnaddress/public/index.php"
+    }
 }
