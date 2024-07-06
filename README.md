@@ -23,9 +23,12 @@ composer install
 
 ## Configuration
 
-The configuration is set up in `lightning-config.php` at the root of the project.
+The configuration is set up in `lightning-config.php` and `nostr.json` at the root of the project.
 ```bash
 cp lightning-config.dist.php lightning-config.php
+```
+```bash
+cp nostr.dist.json nostr.json
 ```
 
 ## What can you do?
