@@ -4,6 +4,9 @@
     },
     "minimum-stability": "dev",
     "scripts": {
+        "post-install-cmd": [
+            "cp nostr.dist.json nostr.json"
+        ],
         "serve": "php -S localhost:8083 vendor/php-lightning/lnaddress/public/index.php"
     }
 }
