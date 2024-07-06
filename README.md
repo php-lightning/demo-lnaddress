@@ -23,30 +23,32 @@ composer install
 
 ## Configuration
 
-The configuration is set up in `lightning-config.php` and `nostr.json` at the root of the project.
-```bash
-cp lightning-config.dist.php lightning-config.php
-```
+The configuration is set up in `nostr.json` at the root of the project.
 ```bash
 cp nostr.dist.json nostr.json
 ```
 
 ## What can you do?
 
-Start your server:
+1) Set up the API-KEY:
 
+For example, create your own wallet https://demo.lnbits.com/ and set up your own api_key. 
+
+<img src="images/demo-lnbits-api-key.png" alt="set up the api_ky">
+
+2) Start your server:
 ```bash
 php -S localhost:8080 vendor/php-lightning/lnaddress/public/index.php
 ```
 
-1) Get a callback url and lightning server configuration. Request without any GET params:
+3) Get a callback url and lightning server configuration. Request without any GET params:
 ```http request
-http://localhost:8080/  
+http://localhost:8080/
 ```
 <img src="images/callback-url.png" alt="Get a callback url command example">
 
-2) Request an invoice from your server (in milli-sats). Request using amount as GET param:
+4) Request an invoice from your server (in milli-sats). Request using amount as GET param:
 ```http request
-http://localhost:8080/user_1?amount=100000  
+http://localhost:8080/alice?amount=100000  
 ```
-<img src="images/index.png" alt="Request an invoice from your server example">
+<img src="images/alice-amount.png" alt="Request an invoice from your server example">

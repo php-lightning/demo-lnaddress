@@ -1,12 +1,12 @@
 {
     "bob": {
         "type": "lnbits",
-        "api_key": "abc...123",
-        "api_endpoint": "http://localhost:5000"
+        "api_key": "a5485731a12f42f8bd0c93e29bd8445d",
+        "api_endpoint": "https://demo.lnbits.com"
     },
     "alice": {
         "type": "lnbits",
-        "api_key": "def...456",
-        "api_endpoint": "http://localhost:5000"
+        "api_key": "c906ad4496a34119be3a2982db68cc65",
+        "api_endpoint": "https://demo.lnbits.com"
     }
 }
